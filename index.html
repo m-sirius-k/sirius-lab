@@ -167,7 +167,7 @@ footer{border-top:1px solid var(--border);padding:40px 32px;display:flex;align-i
       <button class="lang-btn" onclick="setLang('es')">ES</button>
       <button class="lang-btn" onclick="setLang('ko')">KR</button>
     </div>
-    <button class="nav-cta" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})" data-i18n="nav.cta">Launch Edition →</button>
+    <button class="nav-cta" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})" data-i18n="nav.cta">Install Free →</button>
   </div>
 </nav>
 
@@ -176,7 +176,7 @@ footer{border-top:1px solid var(--border);padding:40px 32px;display:flex;align-i
   <div class="hero-glow2"></div>
   <div class="launch-pill">
     <span class="launch-dot"></span>
-    <span data-i18n="hero.pill">Launch Edition — 500 copies only · $8/mo (20% off $10)</span>
+    <span data-i18n="hero.pill">🎉 Free version now available on Chrome Web Store</span>
   </div>
   <h1>
     <span data-i18n="hero.h1_line1">AI forgets.</span><br>
@@ -332,7 +332,8 @@ footer{border-top:1px solid var(--border);padding:40px 32px;display:flex;align-i
       </div>
       <button class="plan-cta" data-i18n="pricing.free_cta">Install for Free</button>
     </div>
-    <div class="plan-card">
+    <div class="plan-card" style="opacity:.7;position:relative;overflow:hidden">
+      <div class="cs-badge" style="position:absolute;top:14px;right:14px;background:rgba(124,92,252,.15);border:1px solid rgba(124,92,252,.35);color:#a78bfa;font-size:10px;font-weight:500;padding:3px 10px;border-radius:100px;letter-spacing:.06em" data-i18n="pricing.coming_soon">COMING SOON</div>
       <div class="plan-label" data-i18n="pricing.orch_label">Orchestra</div>
       <div class="plan-price-row">
         <span class="plan-price-curr">$</span>
@@ -348,13 +349,14 @@ footer{border-top:1px solid var(--border);padding:40px 32px;display:flex;align-i
         <div class="feat-item"><div class="feat-check">✓</div><div class="feat-text strong" data-i18n="pricing.orch_f4">One right-click to launch</div></div>
         <div class="feat-item"><div class="feat-x">—</div><div class="feat-text" data-i18n="pricing.orch_f5">No-API-key mode</div></div>
       </div>
-      <button class="plan-cta" data-i18n="pricing.orch_cta">Start Orchestra</button>
+      <button class="plan-cta" style="cursor:default;opacity:.5" disabled data-i18n="pricing.coming_soon_btn">Coming Soon</button>
     </div>
-    <div class="plan-card featured">
+    <div class="plan-card featured" style="position:relative;overflow:hidden">
+      <div style="position:absolute;top:14px;right:14px;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.4);color:var(--gold);font-size:10px;font-weight:500;padding:3px 10px;border-radius:100px;letter-spacing:.06em" data-i18n="pricing.coming_soon">COMING SOON</div>
       <div class="plan-label gold" data-i18n="pricing.one_label">Orchestra One</div>
       <div class="launch-badge">
         <span style="width:5px;height:5px;border-radius:50%;background:var(--gold);display:inline-block"></span>
-        <span data-i18n="pricing.one_launch">Launch Edition · 500 copies only</span>
+        <span data-i18n="pricing.one_launch">Launch Edition · 500 copies · Early access</span>
       </div>
       <div class="plan-price-row" style="gap:8px;align-items:baseline">
         <span class="plan-price-curr" style="color:var(--gold)">$</span>
@@ -371,10 +373,10 @@ footer{border-top:1px solid var(--border);padding:40px 32px;display:flex;align-i
         <div class="feat-item"><div class="feat-check">✓</div><div class="feat-text strong" data-i18n="pricing.one_f4">One right-click to launch</div></div>
         <div class="feat-item"><div class="feat-check">✓</div><div class="feat-text strong" data-i18n="pricing.one_f5">No API key · fully autonomous</div></div>
       </div>
-      <button class="plan-cta gold-cta" data-i18n="pricing.one_cta">Get Launch Edition →</button>
+      <button class="plan-cta gold-cta" style="cursor:default;opacity:.6" disabled data-i18n="pricing.notify_btn">Notify me when ready →</button>
     </div>
   </div>
-  <p class="limited-note" data-i18n-html="pricing.limited_note">Launch Edition is <span>limited to 500 copies</span>. After that, price returns to $10/mo.</p>
+  <p class="limited-note" data-i18n-html="pricing.limited_note">Paid plans coming soon. <span>Install free today</span> — no credit card required.</p>
 </section>
 
 <hr class="divider">
