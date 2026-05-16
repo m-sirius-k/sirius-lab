@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orchestra — Support</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0d14;
+    --surface: #111520;
+    --border: #1e2535;
+    --accent: #4f8eff;
+    --accent2: #f0c040;
+    --text: #e8eaf0;
+    --muted: #7a8099;
+    --success: #3ecf8e;
+    --warn: #f0a040;
+    --danger: #ff5c5c;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* HEADER */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .logo-icon {
+    width: 36px; height: 36px;
+    background: linear-gradient(135deg, #1a2a4a, #2a4a8a);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .logo-text { font-size: 18px; font-weight: 600; letter-spacing: -0.3px; }
+  .logo-badge {
+    margin-left: 8px;
+    font-size: 11px;
+    background: var(--accent);
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+  nav { margin-left: auto; display: flex; gap: 24px; }
+  nav a { color: var(--muted); font-size: 14px; }
+  nav a:hover { color: var(--text); text-decoration: none; }
+
+  /* HERO */
+  .hero {
+    text-align: center;
+    padding: 60px 40px 40px;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero h1 { font-size: 36px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 12px; }
+  .hero p { color: var(--muted); font-size: 16px; max-width: 500px; margin: 0 auto; }
+
+  /* LAYOUT */
+  .container { max-width: 900px; margin: 0 auto; padding: 48px 24px; }
+
+  /* SECTION */
+  .section { margin-bottom: 56px; }
+  .section-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  /* STEPS */
+  .steps { display: flex; flex-direction: column; gap: 16px; }
+  .step {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .step-num {
+    min-width: 32px; height: 32px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: 'DM Mono', monospace;
+  }
+  .step-body h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+  .step-body p { color: var(--muted); font-size: 14px; }
+  .step-body code {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    background: #0d1120;
+    border: 1px solid var(--border);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--accent2);
+  }
+
+  /* ERROR CARDS */
+  .errors { display: flex; flex-direction: column; gap: 16px; }
+  .error-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .error-header {
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .error-badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-family: 'DM Mono', monospace;
+  }
+  .badge-warn { background: rgba(240,160,64,0.15); color: var(--warn); }
+  .badge-danger { background: rgba(255,92,92,0.15); color: var(--danger); }
+  .badge-info { background: rgba(79,142,255,0.15); color: var(--accent); }
+  .error-title { font-size: 14px; font-weight: 600; }
+  .error-body { padding: 16px 20px; }
+  .error-body p { color: var(--muted); font-size: 14px; margin-bottom: 8px; }
+  .error-body ul { color: var(--muted); font-size: 14px; padding-left: 18px; }
+  .error-body ul li { margin-bottom: 4px; }
+  .fix {
+    margin-top: 10px;
+    background: #0d1120;
+    border-left: 3px solid var(--success);
+    padding: 10px 14px;
+    border-radius: 0 6px 6px 0;
+    font-size: 13px;
+    color: var(--success);
+  }
+  .fix strong { display: block; margin-bottom: 4px; font-size: 12px; letter-spacing: 0.5px; }
+
+  /* FAQ */
+  .faq { display: flex; flex-direction: column; gap: 12px; }
+  .faq-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .faq-q { font-weight: 600; font-size: 14px; margin-bottom: 8px; }
+  .faq-a { color: var(--muted); font-size: 14px; }
+
+  /* CONTACT */
+  .contact-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+  }
+  .contact-box h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+  .contact-box p { color: var(--muted); margin-bottom: 20px; font-size: 14px; }
+  .btn {
+    display: inline-block;
+    padding: 10px 24px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: opacity 0.2s;
+  }
+  .btn:hover { opacity: 0.85; text-decoration: none; }
+  .btn-ghost {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+    margin-left: 12px;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 40px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="icons/orchestra_icon.png" style="width:36px;height:36px;border-radius:8px;" alt="Orchestra">
+  <span class="logo-text">Orchestra</span>
+  <span class="logo-badge">Support</span>
+  <nav>
+    <a href="https://m-sirius-k.github.io/sirius-lab/">Home</a>
+    <a href="https://github.com/m-sirius-k/sirius-lab/issues">GitHub Issues</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>How can we help?</h1>
+  <p>Setup guides, troubleshooting, and answers to common questions about Orchestra.</p>
+</div>
+
+<div class="container">
+
+  <!-- SETUP -->
+  <div class="section">
+    <div class="section-title">Setup Guide</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>Install Orchestra from Chrome Web Store</h3>
+          <p>Click "Add to Chrome" on the store page. Chrome will ask for permission — click "Add extension" to confirm.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>Open claude.ai in Chrome</h3>
+          <p>Orchestra only works on <code>claude.ai</code>. Make sure you are logged in to your Claude account before continuing.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>Start a conversation</h3>
+          <p>Send any message on claude.ai. Orchestra begins capturing automatically — no button to press, no configuration needed.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h3>Open the Orchestra popup</h3>
+          <p>Click the Orchestra icon in your Chrome toolbar (top-right). You will see your saved messages, search bar, and export buttons.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <h3>Export anytime</h3>
+          <p>Click <code>↓ CSV</code> or <code>↓ JSON</code> to download your full conversation history. No account required. No limits.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ERRORS -->
+  <div class="section">
+    <div class="section-title">Troubleshooting</div>
+    <div class="errors">
+
+      <div class="error-card">
+        <div class="error-header">
+          <span class="error-badge badge-danger">ERROR</span>
+          <span class="error-title">Messages are not being saved</span>
+        </div>
+        <div class="error-body">
+          <p>Orchestra is not capturing new messages from claude.ai.</p>
+          <ul>
+            <li>The extension may not have loaded on this tab.</li>
+            <li>You may be on a page other than <code>claude.ai</code>.</li>
+            <li>Chrome may have disabled the extension after an update.</li>
+          </ul>
+          <div class="fix">
+            <strong>FIX</strong>
+            Go to <code>chrome://extensions</code> → find Orchestra → toggle OFF then ON → reload claude.ai and try again.
+          </div>
+        </div>
+      </div>
+
+      <div class="error-card">
+        <div class="error-header">
+          <span class="error-badge badge-warn">WARNING</span>
+          <span class="error-title">Popup shows 0 messages after install</span>
+        </div>
+        <div class="error-body">
+          <p>Orchestra only saves messages from the moment it is installed. Past conversations are not retroactively captured.</p>
+          <div class="fix">
+            <strong>EXPECTED BEHAVIOR</strong>
+            Send at least one message on claude.ai after installing. The counter will update within seconds.
+          </div>
+        </div>
+      </div>
+
+      <div class="error-card">
+        <div class="error-header">
+          <span class="error-badge badge-warn">WARNING</span>
+          <span class="error-title">Export CSV / JSON button does nothing</span>
+        </div>
+        <div class="error-body">
+          <p>The download may be blocked by Chrome's download settings, or there is no data to export yet.</p>
+          <ul>
+            <li>Check that Chrome is not blocking downloads from extensions.</li>
+            <li>Make sure at least one message has been saved first.</li>
+          </ul>
+          <div class="fix">
+            <strong>FIX</strong>
+            Go to Chrome Settings → Downloads → make sure "Ask where to save each file" is not blocking automatic downloads.
+          </div>
+        </div>
+      </div>
+
+      <div class="error-card">
+        <div class="error-header">
+          <span class="error-badge badge-danger">ERROR</span>
+          <span class="error-title">Extension icon is grayed out / inactive</span>
+        </div>
+        <div class="error-body">
+          <p>Orchestra is only active on <code>claude.ai</code> pages. On all other sites the icon will appear grayed out — this is expected behavior.</p>
+          <div class="fix">
+            <strong>EXPECTED BEHAVIOR</strong>
+            Navigate to claude.ai. The icon will become active automatically.
+          </div>
+        </div>
+      </div>
+
+      <div class="error-card">
+        <div class="error-header">
+          <span class="error-badge badge-info">INFO</span>
+          <span class="error-title">Data disappeared after reinstalling</span>
+        </div>
+        <div class="error-body">
+          <p>Orchestra stores all data in your browser's local IndexedDB. Uninstalling the extension permanently deletes all saved data — this is by design for privacy.</p>
+          <div class="fix">
+            <strong>RECOMMENDATION</strong>
+            Export your data as CSV or JSON regularly as a backup before uninstalling or updating Chrome.
+          </div>
+        </div>
+      </div>
+
+      <div class="error-card">
+        <div class="error-header">
+          <span class="error-badge badge-warn">WARNING</span>
+          <span class="error-title">Search returns no results</span>
+        </div>
+        <div class="error-body">
+          <p>Search is case-sensitive on some builds, or the keyword may not exactly match saved content.</p>
+          <ul>
+            <li>Try shorter keywords (e.g. "python" instead of "Python script").</li>
+            <li>Switch between ALL / YOU / AI tabs to narrow the scope.</li>
+          </ul>
+          <div class="fix">
+            <strong>TIP</strong>
+            Use the "All time" date filter and "Newest" sort to see all available messages first.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <div class="section-title">Frequently Asked Questions</div>
+    <div class="faq">
+      <div class="faq-item">
+        <div class="faq-q">Does Orchestra send my data anywhere?</div>
+        <div class="faq-a">No. Orchestra has no server. All data is stored exclusively in your browser's IndexedDB. It is physically impossible for Orchestra to transmit your data externally.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Does Orchestra work with ChatGPT or Gemini?</div>
+        <div class="faq-a">The current free version is designed specifically for claude.ai. Support for other AI platforms may be added in future versions.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I need an API key?</div>
+        <div class="faq-a">No. Orchestra uses your existing browser session — the account you already have open in Chrome. No API key purchase is required.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How much data can Orchestra store?</div>
+        <div class="faq-a">Storage is limited by your browser's IndexedDB quota, which is typically several hundred megabytes. For most users this means thousands of conversations before any limit is reached.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I use Orchestra on multiple computers?</div>
+        <div class="faq-a">Data is stored locally per browser, so it does not sync across devices. Export your data as JSON and import it manually if needed.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How do I completely remove Orchestra and all its data?</div>
+        <div class="faq-a">Go to chrome://extensions → find Orchestra → click "Remove". All data stored by the extension is automatically deleted by Chrome upon removal.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="section">
+    <div class="section-title">Still need help?</div>
+    <div class="contact-box">
+      <h3>Contact Support</h3>
+      <p>If your issue is not covered above, please open a GitHub Issue and we will respond as soon as possible.</p>
+      <a class="btn" href="https://github.com/m-sirius-k/sirius-lab/issues/new" target="_blank">Open an Issue</a>
+      <a class="btn btn-ghost" href="https://m-sirius-k.github.io/sirius-lab/" target="_blank">Back to Home</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 sirius-lab · <a href="https://m-sirius-k.github.io/sirius-lab/privacy.html">Privacy Policy</a> · <a href="https://m-sirius-k.github.io/sirius-lab/">Home</a></p>
+</footer>
+
+</body>
+</html>
