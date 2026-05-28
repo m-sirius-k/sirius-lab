@@ -2,9 +2,9 @@
 
 **Persistent memory and governance tools for AI workflows.**
 
-Built on MoCKA 窶・an AI operating system for safety-critical work.
+Built on MoCKA —an AI operating system for safety-critical work.
 
-> "Don't trust AI 窶・constrain it with systems."
+> "Don't trust AI —constrain it with systems."
 
 ---
 
@@ -81,10 +81,10 @@ GitHub: [@m-sirius-k](https://github.com/m-sirius-k)
 
 ## Technical Notes
 
-- Pure HTML/CSS/JS 窶・no frameworks
-- GitHub Pages compatible 窶・relative paths throughout
-- No external image dependencies 窶・all visuals are SVG/CSS
-- Local-first by design 窶・no tracking, no analytics
+- Pure HTML/CSS/JS —no frameworks
+- GitHub Pages compatible —relative paths throughout
+- No external image dependencies —all visuals are SVG/CSS
+- Local-first by design —no tracking, no analytics
 
 ---
 
