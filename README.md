@@ -54,7 +54,7 @@ Every failure should become institutional knowledge.
 ## MoCKA Core Loop
 
 ```
-Observe 竊・Record 竊・Analyze 竊・Prevent 竊・Decide 竊・Act 竊・Audit 竊・[loop]
+Observe →Record →Analyze →Prevent →Decide →Act →Audit →[loop]
 ```
 
 The MoCKA governance engine is a perpetual loop. No interaction escapes it.
