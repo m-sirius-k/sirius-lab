@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mini-MoCKA — sirius-lab</title>
+  <meta name="description" content="MoCKA governance primitives for individual researchers and developers. Local-first, privacy-preserving AI accountability.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .scale-diagram {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .scale-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-family: var(--mono);
+    }
+    .scale-label { font-size: 12px; color: var(--text-3); min-width: 120px; letter-spacing: 0.06em; }
+    .scale-bar-wrap { flex: 1; height: 8px; background: var(--bg-4); border-radius: 4px; overflow: hidden; border: 1px solid var(--border); }
+    .scale-bar-fill { height: 100%; border-radius: 4px; }
+    .scale-tag { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; min-width: 100px; text-align: right; }
+  </style>
+</head>
+<body>
+
+<div class="hero-bg"></div>
+<div class="hero-grid"></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="../" class="site-logo">sirius<span>-</span>lab</a>
+  <nav class="site-nav">
+    <a href="../orchestra/">Orchestra</a>
+    <a href="../relay/">Relay</a>
+    <a href="../memory/">Memory</a>
+    <a href="../phi-os/">PHI-OS</a>
+    <a href="../mini-mocka/" class="active">mini-MoCKA</a>
+  </nav>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<nav class="mobile-nav">
+  <a href="../orchestra/">Orchestra</a>
+  <a href="../relay/">Relay</a>
+  <a href="../memory/">Memory</a>
+  <a href="../phi-os/">PHI-OS</a>
+  <a href="../mini-mocka/" class="active">mini-MoCKA</a>
+</nav>
+
+<main>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="eyebrow hero-anim">sirius-lab · mini-MoCKA</div>
+    <h1 class="hero-anim">
+      MoCKA governance<br>
+      <em>for individuals.</em>
+    </h1>
+    <p class="hero-quote hero-anim">
+      Governance isn't only for enterprises. Every researcher. Every developer.
+    </p>
+    <p class="hero-desc hero-anim">
+      mini-MoCKA distills the core primitives of the MoCKA AI governance OS
+      into a lightweight, local-first tool for solo researchers, developers, and small teams.
+    </p>
+    <div class="cta-group hero-anim">
+      <span class="badge badge-soon" style="font-size:12px; padding:6px 14px;">Coming Soon</span>
+    </div>
+    <p class="hero-desc hero-anim" style="margin-top:20px; font-size:14px;">
+      Start governing your AI workflows today. No infrastructure required.
+    </p>
+  </section>
+
+  <hr>
+
+  <!-- ===== CONCEPT ===== -->
+  <div class="section-alt">
+    <div class="section">
+      <div class="section-header animate">
+        <div class="section-eyebrow">The Concept</div>
+        <h2>Enterprise Governance, Individual Scale</h2>
+        <p class="section-desc">
+          MoCKA is an enterprise-grade AI governance OS.
+          mini-MoCKA makes its core primitives accessible to
+          individuals, researchers, and small teams — without the infrastructure overhead.
+        </p>
+      </div>
+
+      <div class="scale-diagram animate d2">
+        <div class="scale-row">
+          <span class="scale-label">MoCKA (Full)</span>
+          <div class="scale-bar-wrap">
+            <div class="scale-bar-fill" style="width:100%; background:linear-gradient(90deg, var(--gold), rgba(201,168,76,0.4));"></div>
+          </div>
+          <span class="scale-tag" style="color:var(--text-3);">Enterprise</span>
+        </div>
+        <div class="scale-row">
+          <span class="scale-label">mini-MoCKA</span>
+          <div class="scale-bar-wrap">
+            <div class="scale-bar-fill" style="width:45%; background:linear-gradient(90deg, var(--gold), rgba(201,168,76,0.3));"></div>
+          </div>
+          <span class="scale-tag" style="color:var(--gold);">Individual ← Here</span>
+        </div>
+        <div class="scale-row" style="opacity:0.5;">
+          <span class="scale-label">Ad-hoc AI use</span>
+          <div class="scale-bar-wrap">
+            <div class="scale-bar-fill" style="width:0%;"></div>
+          </div>
+          <span class="scale-tag" style="color:var(--text-4);">No governance</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ===== PLANNED FEATURES ===== -->
+  <div class="section">
+    <div class="section-header animate">
+      <div class="section-eyebrow">Planned Capabilities</div>
+      <h2>Governance Primitives</h2>
+    </div>
+
+    <div class="grid-2 animate d2">
+
+      <div class="card card-gold">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <div class="card-title">Personal Audit Trail</div>
+        <p class="card-desc">
+          Every AI-assisted decision is logged with full context.
+          Searchable, exportable, and tamper-evident. Your work, verifiable.
+        </p>
+      </div>
+
+      <div class="card card-gold">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        </div>
+        <div class="card-title">Decision Ledger</div>
+        <p class="card-desc">
+          An append-only record of every significant AI-assisted decision.
+          Why you made it, what context you had, what the AI contributed.
+        </p>
+      </div>
+
+      <div class="card card-gold">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <div class="card-title">AI Interaction Governance</div>
+        <p class="card-desc">
+          Define rules for how AI can assist your work. Enforce them locally.
+          Know when you're operating within bounds and when you're not.
+        </p>
+      </div>
+
+      <div class="card card-gold">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div class="card-title">Local-first, Private</div>
+        <p class="card-desc">
+          All data stays on your machine. No cloud, no accounts,
+          no vendor visibility into your work. Full data sovereignty.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ===== RELATIONSHIP ===== -->
+  <div class="section-alt">
+    <div class="section">
+      <div class="section-header animate">
+        <div class="section-eyebrow">Built on PHI-OS</div>
+        <h2>From Research to Practice</h2>
+        <p class="section-desc">
+          mini-MoCKA implements the primitives defined in the PHI-OS research architecture —
+          making formal AI governance theory accessible to individual practitioners.
+        </p>
+      </div>
+
+      <div class="grid-2 animate d2">
+        <div class="card" style="border-color:rgba(155,142,196,0.2);">
+          <div class="card-title" style="color:var(--purple);">PHI-OS (Foundation)</div>
+          <p class="card-desc">
+            Formal OS-layer architecture. Defines the Silence Prohibition Protocol,
+            persistent history injection, and context verification at a theoretical level.
+          </p>
+          <div style="margin-top:16px;">
+            <a href="../phi-os/" class="btn btn-purple" style="font-size:11px; padding:9px 18px;">Read the Research →</a>
+          </div>
+        </div>
+        <div class="card card-gold">
+          <div class="card-title">mini-MoCKA (Implementation)</div>
+          <p class="card-desc">
+            Takes PHI-OS primitives and packages them into a practical tool for
+            day-to-day AI governance — no PhD required, no infrastructure needed.
+          </p>
+          <div style="margin-top:16px;">
+            <span class="badge badge-soon">Coming Soon</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ===== SERIES ===== -->
+  <div class="section">
+    <div class="section-header animate">
+      <div class="section-eyebrow">The Series</div>
+      <h2>See the Full Picture</h2>
+    </div>
+    <div class="product-list animate d2">
+      <a href="../orchestra/" class="product-card">
+        <span class="product-name">Orchestra</span>
+        <span class="product-desc">Save, search, export Claude conversations locally</span>
+        <span class="product-status"><span class="badge badge-live">Live</span></span>
+        <span class="product-arrow">→</span>
+      </a>
+      <a href="../relay/" class="product-card">
+        <span class="product-name">Relay</span>
+        <span class="product-desc">Context continuity across Claude sessions</span>
+        <span class="product-status"><span class="badge badge-dev">In Dev</span></span>
+        <span class="product-arrow">→</span>
+      </a>
+      <a href="../memory/" class="product-card">
+        <span class="product-name">Memory</span>
+        <span class="product-desc">Persistent institutional memory for AI workflows</span>
+        <span class="product-status"><span class="badge badge-soon">Coming Soon</span></span>
+        <span class="product-arrow">→</span>
+      </a>
+      <a href="../phi-os/" class="product-card research">
+        <span class="product-name">PHI-OS</span>
+        <span class="product-desc">The research architecture powering everything</span>
+        <span class="product-status"><span class="badge badge-research">Research</span></span>
+        <span class="product-arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand-name">sirius-lab · mini-MoCKA</div>
+      <div class="footer-taglines">
+        <p>Failures are institutional assets.</p>
+        <p>Work that leaves no record does not exist.</p>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="../privacy.html">Privacy</a>
+      <a href="../support.html">Support</a>
+      <a href="https://github.com/m-sirius-k/sirius-lab" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

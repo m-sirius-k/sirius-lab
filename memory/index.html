@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory — sirius-lab</title>
+  <meta name="description" content="Persistent institutional memory for AI workflows. Structured, searchable, auditable.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .concept-text {
+      font-family: var(--mono);
+      font-size: 17px;
+      color: var(--text-2);
+      line-height: 2;
+      max-width: 640px;
+    }
+    .concept-text strong { color: var(--text); font-weight: 500; }
+    .concept-text em { color: var(--gold); font-style: normal; }
+    .concept-text p + p { margin-top: 20px; }
+
+    .memory-graph {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+    }
+    .memory-node {
+      background: var(--bg-3);
+      padding: 20px;
+      position: relative;
+    }
+    .memory-node::after {
+      content: '';
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      opacity: 0.4;
+      margin: 8px;
+    }
+    .memory-node-date { font-family: var(--mono); font-size: 10px; color: var(--text-4); letter-spacing: 0.08em; margin-bottom: 8px; }
+    .memory-node-title { font-family: var(--mono); font-size: 13px; color: var(--text); margin-bottom: 6px; }
+    .memory-node-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+    .memory-tag { font-family: var(--mono); font-size: 10px; background: var(--bg-4); border: 1px solid var(--border-2); color: var(--text-3); padding: 2px 7px; border-radius: 2px; }
+  </style>
+</head>
+<body>
+
+<div class="hero-bg"></div>
+<div class="hero-grid"></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="../" class="site-logo">sirius<span>-</span>lab</a>
+  <nav class="site-nav">
+    <a href="../orchestra/">Orchestra</a>
+    <a href="../relay/">Relay</a>
+    <a href="../memory/" class="active">Memory</a>
+    <a href="../phi-os/">PHI-OS</a>
+    <a href="../mini-mocka/">mini-MoCKA</a>
+  </nav>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<nav class="mobile-nav">
+  <a href="../orchestra/">Orchestra</a>
+  <a href="../relay/">Relay</a>
+  <a href="../memory/" class="active">Memory</a>
+  <a href="../phi-os/">PHI-OS</a>
+  <a href="../mini-mocka/">mini-MoCKA</a>
+</nav>
+
+<main>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="eyebrow hero-anim">sirius-lab · Memory</div>
+    <h1 class="hero-anim">Institutional memory<br>for <em>AI workflows.</em></h1>
+    <p class="hero-quote hero-anim">
+      Your AI interactions, accumulated. Your decisions, preserved. Your knowledge, never lost.
+    </p>
+    <p class="hero-desc hero-anim">
+      Memory turns the stream of AI conversations into a permanent,
+      structured knowledge base for your organization.
+    </p>
+    <div class="cta-group hero-anim">
+      <span class="badge badge-soon" style="font-size:12px; padding:6px 14px;">Coming Soon</span>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- ===== CONCEPT ===== -->
+  <div class="section-alt">
+    <div class="section">
+      <div class="section-header animate">
+        <div class="section-eyebrow">The Vision</div>
+        <h2>What if AI knowledge accumulated?</h2>
+      </div>
+
+      <div class="concept-text animate d2">
+        <p>
+          What if every AI conversation you've ever had became
+          <em>searchable, verifiable institutional memory?</em>
+        </p>
+        <p>
+          Not just saved — <strong>structured.</strong><br>
+          Not just stored — <strong>auditable.</strong><br>
+          Not just indexed — <strong>traceable.</strong>
+        </p>
+        <p>
+          Memory builds a living knowledge graph from your AI interactions.
+          Every decision, every analysis, every insight — connected,
+          cross-referenced, and available to every future conversation.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ===== MOCK MEMORY GRAPH ===== -->
+  <div class="section">
+    <div class="section-header animate">
+      <div class="section-eyebrow">Preview</div>
+      <h2>Your Knowledge, Structured</h2>
+    </div>
+
+    <div class="memory-graph animate d2">
+      <div class="memory-node">
+        <div class="memory-node-date">2025-03-12 · Session 047</div>
+        <div class="memory-node-title">Architecture decision: local-first storage</div>
+        <div class="memory-node-tags">
+          <span class="memory-tag">architecture</span>
+          <span class="memory-tag">decision</span>
+        </div>
+      </div>
+      <div class="memory-node">
+        <div class="memory-node-date">2025-03-14 · Session 051</div>
+        <div class="memory-node-title">Context injection strategy v2</div>
+        <div class="memory-node-tags">
+          <span class="memory-tag">relay</span>
+          <span class="memory-tag">design</span>
+        </div>
+      </div>
+      <div class="memory-node">
+        <div class="memory-node-date">2025-03-18 · Session 058</div>
+        <div class="memory-node-title">Audit trail schema finalized</div>
+        <div class="memory-node-tags">
+          <span class="memory-tag">audit</span>
+          <span class="memory-tag">schema</span>
+        </div>
+      </div>
+      <div class="memory-node" style="opacity:0.6;">
+        <div class="memory-node-date">2025-03-22 · Session 063</div>
+        <div class="memory-node-title">Safety protocol review</div>
+        <div class="memory-node-tags">
+          <span class="memory-tag">safety</span>
+        </div>
+      </div>
+      <div class="memory-node" style="opacity:0.4;">
+        <div class="memory-node-date">2025-03-25 · Session 067</div>
+        <div class="memory-node-title">Export format comparison</div>
+        <div class="memory-node-tags">
+          <span class="memory-tag">export</span>
+        </div>
+      </div>
+      <div class="memory-node" style="opacity:0.25; display:flex; align-items:center; justify-content:center;">
+        <span style="font-family:var(--mono); font-size:11px; color:var(--text-4); letter-spacing:0.1em; text-transform:uppercase;">More to come</span>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ===== PLANNED FEATURES ===== -->
+  <div class="section-alt">
+    <div class="section">
+      <div class="section-header animate">
+        <div class="section-eyebrow">Planned Capabilities</div>
+        <h2>What Memory Will Do</h2>
+      </div>
+
+      <div class="grid-2 animate d2">
+        <div class="card">
+          <div class="card-title">Cross-session Memory Graph</div>
+          <p class="card-desc">Automatically connect related conversations, decisions, and insights across sessions into a navigable knowledge graph.</p>
+        </div>
+        <div class="card">
+          <div class="card-title">Decision Trace &amp; Audit Trail</div>
+          <p class="card-desc">Every AI-assisted decision is logged with full context. Reproduce any reasoning chain from any point in time.</p>
+        </div>
+        <div class="card">
+          <div class="card-title">Knowledge Accumulation Engine</div>
+          <p class="card-desc">The more you use AI, the more Memory learns about your domain, preferences, and institutional context.</p>
+        </div>
+        <div class="card">
+          <div class="card-title">Team-level Institutional Memory</div>
+          <p class="card-desc">Share verified knowledge across team members. No more re-explaining context to new colleagues or new sessions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand-name">sirius-lab · Memory</div>
+      <div class="footer-taglines">
+        <p>Failures are institutional assets.</p>
+        <p>Work that leaves no record does not exist.</p>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="../privacy.html">Privacy</a>
+      <a href="../support.html">Support</a>
+      <a href="https://github.com/m-sirius-k/sirius-lab" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

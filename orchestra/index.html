@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orchestra — sirius-lab</title>
+  <meta name="description" content="Save, search, and export your Claude conversations locally. Your history, permanently yours. No cloud. No privacy risk.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .orchestra-hero-icon {
+      width: 120px; height: 120px;
+      margin-bottom: 36px;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 50%;
+      background: rgba(201,168,76,0.04);
+    }
+    .orchestra-hero-icon svg { overflow: visible; }
+
+    .chrome-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--mono); font-size: 12px;
+      color: var(--text-3); margin-top: 8px;
+      letter-spacing: 0.08em;
+    }
+    .chrome-badge::before {
+      content: '';
+      display: block; width: 6px; height: 6px;
+      border-radius: 50%; background: var(--gold);
+    }
+
+    .cta-section {
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 48px;
+      text-align: center;
+    }
+    .cta-section h3 {
+      font-size: 24px; margin-bottom: 12px;
+    }
+    .cta-section p {
+      font-size: 15px; color: var(--text-2);
+      margin-bottom: 32px; max-width: 440px; margin-left: auto; margin-right: auto;
+    }
+    .cta-section .cta-group { justify-content: center; }
+  </style>
+</head>
+<body>
+
+<div class="hero-bg"></div>
+<div class="hero-grid"></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="../" class="site-logo">sirius<span>-</span>lab</a>
+  <nav class="site-nav">
+    <a href="../orchestra/" class="active">Orchestra</a>
+    <a href="../relay/">Relay</a>
+    <a href="../memory/">Memory</a>
+    <a href="../phi-os/">PHI-OS</a>
+    <a href="../mini-mocka/">mini-MoCKA</a>
+  </nav>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<nav class="mobile-nav">
+  <a href="../orchestra/" class="active">Orchestra</a>
+  <a href="../relay/">Relay</a>
+  <a href="../memory/">Memory</a>
+  <a href="../phi-os/">PHI-OS</a>
+  <a href="../mini-mocka/">mini-MoCKA</a>
+</nav>
+
+<main>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="orchestra-hero-icon hero-anim">
+      <svg id="orchestra-spiral" viewBox="0 0 120 120" width="80" height="80"></svg>
+    </div>
+    <div class="eyebrow hero-anim">sirius-lab · Orchestra</div>
+    <h1 class="hero-anim">Your Claude conversations,<br><em>permanently yours.</em></h1>
+    <p class="hero-quote hero-anim">
+      Your AI interactions are institutional assets. Treat them as such.
+    </p>
+    <p class="hero-desc hero-anim">
+      Orchestra saves every Claude conversation to local storage —
+      fully searchable, exportable, and always available.
+      No cloud. No sync. No privacy risk.
+    </p>
+    <div class="cta-group hero-anim">
+      <a href="https://chromewebstore.google.com/detail/orchestra/aollpclhdmcaocbahnakiacfhafamllo" target="_blank" rel="noopener" class="btn btn-primary">Install Orchestra — Free →</a>
+      <a href="https://github.com/m-sirius-k/sirius-lab" target="_blank" rel="noopener" class="btn btn-secondary">View on GitHub ↗</a>
+    </div>
+    <div class="chrome-badge hero-anim">Chrome Web Store · Free · No account required</div>
+  </section>
+
+  <hr>
+
+  <!-- ===== FEATURES ===== -->
+  <div class="section-alt">
+    <div class="section">
+      <div class="section-header animate">
+        <div class="section-eyebrow">Capabilities</div>
+        <h2>What Orchestra Does</h2>
+      </div>
+
+      <div class="grid-2 grid-feature animate d2">
+
+        <div class="card card-gold">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+          <div class="card-title">Full-text Search</div>
+          <p class="card-desc">
+            Search thousands of conversations instantly. Your entire Claude history,
+            findable in seconds. No cloud indexing — all local.
+          </p>
+        </div>
+
+        <div class="card card-gold">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="card-title">Local Storage — Zero Cloud</div>
+          <p class="card-desc">
+            Your data never leaves your machine. No sync servers, no vendor lock-in,
+            no privacy exposure. Your history is yours alone.
+          </p>
+        </div>
+
+        <div class="card card-gold">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </div>
+          <div class="card-title">Export Anywhere</div>
+          <p class="card-desc">
+            JSON and CSV export for any downstream workflow.
+            Your conversations, in formats you control.
+          </p>
+        </div>
+
+        <div class="card card-gold">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <div class="card-title">Zero Dependency</div>
+          <p class="card-desc">
+            Works offline. No API keys, no accounts, no subscriptions.
+            Just your browser extension doing its job.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <div class="section">
+    <div class="section-header animate">
+      <div class="section-eyebrow">Usage</div>
+      <h2>Three Steps. That's It.</h2>
+    </div>
+
+    <div class="steps animate d2">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <div class="step-title">Install</div>
+          <p class="step-desc">
+            Add Orchestra to Chrome from the Web Store.
+            One click — no configuration required.
+          </p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <div class="step-title">Converse</div>
+          <p class="step-desc">
+            Use Claude exactly as you do today.
+            Orchestra works silently in the background, capturing every conversation to local storage.
+          </p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <div class="step-title">Search &amp; Export</div>
+          <p class="step-desc">
+            Open the Orchestra panel to search your full history, browse past sessions,
+            or export to JSON/CSV for external workflows.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ===== PRICING ===== -->
+  <div class="section-alt">
+    <div class="section">
+      <div class="section-header animate">
+        <div class="section-eyebrow">Pricing</div>
+        <h2>Start Free</h2>
+      </div>
+
+      <div class="pricing-grid animate d2">
+        <div class="pricing-card featured">
+          <div class="pricing-tier">Free</div>
+          <div class="pricing-price">$0 <span class="unit">/ forever</span></div>
+          <div class="pricing-note">Available now on Chrome Web Store</div>
+          <ul class="pricing-features">
+            <li>Save conversations locally</li>
+            <li>Full-text search</li>
+            <li>JSON &amp; CSV export</li>
+            <li>Works offline</li>
+            <li>Zero accounts</li>
+          </ul>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-tier">Pro</div>
+          <div class="pricing-price">TBD <span class="unit">/ month</span></div>
+          <div class="pricing-note" style="color:var(--text-3)">Coming soon</div>
+          <ul class="pricing-features">
+            <li>AI-powered semantic search</li>
+            <li>Advanced export formats</li>
+            <li>Cross-device sync (local network)</li>
+            <li>Conversation tagging &amp; folders</li>
+            <li>Priority support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ===== CTA ===== -->
+  <div class="section">
+    <div class="cta-section animate">
+      <h3>Ready to own your conversation history?</h3>
+      <p>Install Orchestra and start building your institutional memory today.</p>
+      <div class="cta-group">
+        <a href="https://chromewebstore.google.com/detail/orchestra/aollpclhdmcaocbahnakiacfhafamllo" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:13px; padding:15px 36px;">
+          Install Orchestra — Free →
+        </a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand-name">sirius-lab · Orchestra</div>
+      <div class="footer-taglines">
+        <p>Failures are institutional assets.</p>
+        <p>Work that leaves no record does not exist.</p>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="../privacy.html">Privacy</a>
+      <a href="../support.html">Support</a>
+      <a href="https://github.com/m-sirius-k/sirius-lab" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PHI-OS — sirius-lab</title>
+  <meta name="description" content="Persistent History Injection OS — the published research architecture powering MoCKA's governance loop. AIES 2026.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    /* PHI-OS gets research-purple accent overrides */
+    .research-eyebrow { color: var(--purple) !important; }
+    .research-eyebrow::before { background: var(--purple) !important; }
+
+    .research-banner {
+      display: inline-flex; align-items: center; gap: 12px;
+      background: rgba(155,142,196,0.07);
+      border: 1px solid rgba(155,142,196,0.2);
+      border-radius: var(--r-lg);
+      padding: 12px 20px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--purple);
+      letter-spacing: 0.06em;
+      margin-top: 8px;
+    }
+    .research-banner svg { width: 16px; height: 16px; stroke: var(--purple); fill: none; stroke-width: 1.5; flex: 0 0 auto; }
+
+    .doi-block {
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 20px 24px;
+      font-family: var(--mono);
+    }
+    .doi-block .doi-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-3); margin-bottom: 8px; }
+    .doi-block .doi-value { font-size: 14px; color: var(--purple); word-break: break-all; }
+    .doi-block .doi-value a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+
+    /* Arch diagram custom */
+    .phi-arch {
+      font-family: var(--mono);
+      font-size: 13px;
+    }
+    .phi-arch .node {
+      border: 1px solid var(--border-2);
+      border-radius: var(--r);
+      padding: 12px 20px;
+      text-align: center;
+      background: var(--bg-4);
+      color: var(--text-2);
+    }
+    .phi-arch .node.top { color: var(--text); }
+    .phi-arch .node.layer {
+      border-color: rgba(155,142,196,0.4);
+      background: rgba(155,142,196,0.05);
+      color: var(--purple);
+      font-weight: 500;
+    }
+    .phi-arch .node.store {
+      border-color: rgba(126,184,212,0.3);
+      background: rgba(126,184,212,0.04);
+      color: var(--blue);
+    }
+    .phi-arch .node.bottom { color: var(--text); }
+    .phi-arch .arrow { text-align: center; padding: 8px 0; color: var(--text-3); }
+    .phi-arch .split { display: flex; gap: 10px; }
+    .phi-arch .split .node { flex: 1; font-size: 12px; }
+    .phi-arch .split-label {
+      font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text-3); text-align: center; margin-bottom: 8px;
+    }
+
+    .abstract-text {
+      font-size: 15px;
+      color: var(--text-2);
+      line-height: 1.8;
+      border-left: 2px solid rgba(155,142,196,0.4);
+      padding-left: 24px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero-bg" style="background: radial-gradient(ellipse 80% 60% at 20% 50%, rgba(155,142,196,0.03) 0%, transparent 60%);"></div>
+<div class="hero-grid"></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="../" class="site-logo">sirius<span>-</span>lab</a>
+  <nav class="site-nav">
+    <a href="../orchestra/">Orchestra</a>
+    <a href="../relay/">Relay</a>
+    <a href="../memory/">Memory</a>
+    <a href="../phi-os/" class="active">PHI-OS</a>
+    <a href="../mini-mocka/">mini-MoCKA</a>
+  </nav>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<nav class="mobile-nav">
+  <a href="../orchestra/">Orchestra</a>
+  <a href="../relay/">Relay</a>
+  <a href="../memory/">Memory</a>
+  <a href="../phi-os/" class="active">PHI-OS</a>
+  <a href="../mini-mocka/">mini-MoCKA</a>
+</nav>
+
+<main>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="eyebrow research-eyebrow hero-anim">sirius-lab · Research Preview</div>
+    <h1 class="hero-anim" style="color:var(--text);">
+      PHI-OS<br>
+      <em style="color:var(--purple);">Persistent History<br>Injection OS</em>
+    </h1>
+    <p class="hero-quote hero-anim" style="border-color:var(--purple);">
+      The governance layer beneath sirius-lab. Not a product — a published architecture.
+    </p>
+    <p class="hero-desc hero-anim">
+      PHI-OS is the persistent history injection layer that powers MoCKA's governance loop.
+      It defines how AI systems can be made structurally incapable of ignoring their history.
+    </p>
+    <div class="cta-group hero-anim">
+      <div class="research-banner">
+        <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        AIES 2026 Submission · Peer-reviewed Research
+      </div>
+    </div>
+    <div class="cta-group hero-anim">
+      <a href="https://doi.org/10.5281/zenodo.19606271" target="_blank" rel="noopener" class="btn btn-purple">Read the Paper ↗</a>
+      <a href="https://doi.org/10.5281/zenodo.19606271" target="_blank" rel="noopener" class="btn btn-secondary">Zenodo DOI ↗</a>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- ===== RESEARCH OVERVIEW ===== -->
+  <div class="section-alt">
+    <div class="section">
+      <div class="section-header animate">
+        <div class="section-eyebrow research-eyebrow">Publication</div>
+        <h2>About This Research</h2>
+      </div>
+
+      <div class="paper-card animate d2">
+        <div class="paper-icon">§</div>
+        <div>
+          <div class="paper-title">
+            Silence Prohibition Protocol and Persistent History Layer:<br>
+            A Formal Governance Architecture for AI Behavioral Accountability
+          </div>
+          <div class="paper-meta">
+            Masahito Kimura · AIES 2026 · Zenodo preprint
+          </div>
+          <p style="font-size:14px; color:var(--text-2); line-height:1.7; margin-bottom:20px;">
+            This paper proposes PHI-OS — a system-level architecture that makes AI history
+            injection a structural property of the operating environment, not an application-layer
+            convention. The Silence Prohibition Protocol (SPP) ensures AI systems cannot produce
+            outputs that lack a verifiable trace to prior context.
+          </p>
+          <div class="paper-cta">
+            <a href="https://doi.org/10.5281/zenodo.19606271" target="_blank" rel="noopener" class="btn btn-purple">Read on Zenodo ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="doi-block animate d3" style="margin-top:16px;">
+        <div class="doi-label">DOI</div>
+        <div class="doi-value">
+          <a href="https://doi.org/10.5281/zenodo.19606271" target="_blank" rel="noopener">
+            10.5281/zenodo.19606271
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ===== ARCHITECTURE ===== -->
+  <div class="section">
+    <div class="section-header animate">
+      <div class="section-eyebrow research-eyebrow">Architecture</div>
+      <h2>The PHI-OS Layer Model</h2>
+      <p class="section-desc">
+        PHI-OS sits between human input and AI response, enforcing governance invariants
+        at the OS layer — where they cannot be bypassed by application code.
+      </p>
+    </div>
+
+    <div class="arch-diagram phi-arch animate d2">
+
+      <div class="node top">Human Input</div>
+      <div class="arrow">↓</div>
+
+      <div class="node layer">[PHI-OS Layer]</div>
+      <div class="arrow" style="padding:4px 0;"></div>
+
+      <div class="split-label">PHI-OS Sub-processes</div>
+      <div class="split" style="margin-bottom:12px;">
+        <div class="node" style="font-size:12px; color:var(--text-2);">History<br>Injection</div>
+        <div class="node" style="font-size:12px; color:var(--text-2);">Context<br>Verification</div>
+        <div class="node" style="font-size:12px; color:var(--text-2);">Silence<br>Detection</div>
+        <div class="node" style="font-size:12px; color:var(--text-2);">Audit<br>Recording</div>
+      </div>
+
+      <div class="arrow">↓</div>
+      <div class="node bottom">AI Response</div>
+      <div class="arrow">↓</div>
+      <div class="node store">[Persistent History Store]</div>
+
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ===== KEY CONCEPTS ===== -->
+  <div class="section-alt">
+    <div class="section">
+      <div class="section-header animate">
+        <div class="section-eyebrow research-eyebrow">Core Concepts</div>
+        <h2>What PHI-OS Defines</h2>
+      </div>
+
+      <div class="grid-2 animate d2">
+        <div class="card" style="border-color:rgba(155,142,196,0.2);">
+          <div class="card-title" style="color:var(--purple);">Silence Prohibition Protocol (SPP)</div>
+          <p class="card-desc">
+            A formal protocol that prevents AI outputs from existing without a verifiable
+            trace to prior context. Silence — the absence of recorded reasoning — is
+            treated as a governance violation.
+          </p>
+        </div>
+        <div class="card" style="border-color:rgba(155,142,196,0.2);">
+          <div class="card-title" style="color:var(--purple);">Persistent History Injection</div>
+          <p class="card-desc">
+            Every AI session receives a structured injection of verified prior history
+            before processing. This is enforced at the OS layer — below application code.
+          </p>
+        </div>
+        <div class="card" style="border-color:rgba(155,142,196,0.2);">
+          <div class="card-title" style="color:var(--purple);">Context Verification</div>
+          <p class="card-desc">
+            Before any AI operation executes, PHI-OS verifies that the injected context
+            is authentic, complete, and unmodified — using cryptographic attestation.
+          </p>
+        </div>
+        <div class="card" style="border-color:rgba(155,142,196,0.2);">
+          <div class="card-title" style="color:var(--purple);">Shadow Movement</div>
+          <p class="card-desc">
+            PHI-OS implements a dual-path architecture. Under partial failure, the system
+            degrades gracefully to a minimum operating capability (~75%) rather than stopping.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ===== RELATIONSHIP TO PRODUCTS ===== -->
+  <div class="section">
+    <div class="section-header animate">
+      <div class="section-eyebrow research-eyebrow">Relationship to sirius-lab</div>
+      <h2>Theory → Practice</h2>
+      <p class="section-desc">
+        PHI-OS is the research foundation. The sirius-lab product series makes its
+        primitives accessible at every scale of use.
+      </p>
+    </div>
+
+    <div class="grid-2 animate d2" style="margin-top:0;">
+      <div class="card" style="display:flex; flex-direction:column; gap:12px;">
+        <div style="font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--purple);">PHI-OS (This)</div>
+        <p class="card-desc">The formal OS-layer architecture. Published, peer-reviewed, referenceable. The theoretical foundation for all sirius-lab products.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <div class="card card-gold" style="flex:1;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+            <span style="font-family:var(--mono); font-size:13px; color:var(--text);">mini-MoCKA</span>
+            <span class="badge badge-soon">Coming Soon</span>
+          </div>
+          <p class="card-desc" style="font-size:13px;">PHI-OS primitives for individuals</p>
+        </div>
+        <div class="card card-gold" style="flex:1;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+            <span style="font-family:var(--mono); font-size:13px; color:var(--text);">Orchestra + Relay + Memory</span>
+            <span class="badge badge-live">Live / Dev</span>
+          </div>
+          <p class="card-desc" style="font-size:13px;">PHI-OS primitives at product scale</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand-name">sirius-lab · PHI-OS</div>
+      <div class="footer-taglines">
+        <p>Failures are institutional assets.</p>
+        <p>Work that leaves no record does not exist.</p>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="../privacy.html">Privacy</a>
+      <a href="../support.html">Support</a>
+      <a href="https://github.com/m-sirius-k/sirius-lab" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relay — sirius-lab</title>
+  <meta name="description" content="Context continuity across Claude sessions. When the context window fills, work doesn't stop.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .problem-card {
+      background: var(--bg-3);
+      border: 1px solid rgba(126,184,212,0.15);
+      border-left: 3px solid var(--blue);
+      border-radius: 0 var(--r-lg) var(--r-lg) 0;
+      padding: 28px 32px;
+    }
+    .problem-card h3 { color: var(--blue); margin-bottom: 14px; }
+    .problem-card p { font-size: 15px; color: var(--text-2); line-height: 1.75; }
+    .problem-card p + p { margin-top: 12px; }
+    .problem-card em { color: var(--text); font-style: normal; }
+
+    .flow-label-row {
+      display: flex; gap: 16px; align-items: center;
+      font-family: var(--mono); font-size: 12px;
+      padding: 10px 0;
+    }
+    .flow-label-row .fl-name { color: var(--text); min-width: 80px; }
+    .flow-label-row .fl-content { flex: 1; color: var(--text-2); }
+    .flow-label-row .fl-tag { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; }
+    .relay-connector {
+      display: flex; align-items: center;
+      font-family: var(--mono); font-size: 12px; color: var(--blue);
+      padding: 12px 0 12px 16px; gap: 12px;
+      border-left: 1px dashed rgba(126,184,212,0.3);
+      margin-left: 20px;
+    }
+    .relay-connector::before { content: '↓'; }
+  </style>
+</head>
+<body>
+
+<div class="hero-bg" style="background: radial-gradient(ellipse 80% 60% at 20% 50%, rgba(126,184,212,0.03) 0%, transparent 60%);"></div>
+<div class="hero-grid"></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="../" class="site-logo">sirius<span>-</span>lab</a>
+  <nav class="site-nav">
+    <a href="../orchestra/">Orchestra</a>
+    <a href="../relay/" class="active">Relay</a>
+    <a href="../memory/">Memory</a>
+    <a href="../phi-os/">PHI-OS</a>
+    <a href="../mini-mocka/">mini-MoCKA</a>
+  </nav>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<nav class="mobile-nav">
+  <a href="../orchestra/">Orchestra</a>
+  <a href="../relay/" class="active">Relay</a>
+  <a href="../memory/">Memory</a>
+  <a href="../phi-os/">PHI-OS</a>
+  <a href="../mini-mocka/">mini-MoCKA</a>
+</nav>
+
+<main>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="eyebrow hero-anim" style="color:var(--blue);">sirius-lab · Relay</div>
+    <h1 class="hero-anim" style="color:var(--text);">Context continuity<br>across Claude sessions.</h1>
+    <p class="hero-quote hero-anim" style="border-color:var(--blue);">
+      When Claude forgets, your work doesn't have to.
+    </p>
+    <p class="hero-desc hero-anim">
+      Relay captures the essence of each session and injects calibrated context
+      into the next — maintaining continuity across Claude's context window boundary.
+    </p>
+    <div class="cta-group hero-anim">
+      <span class="badge badge-dev" style="font-size:12px; padding:6px 14px;">In Development</span>
+    </div>
+    <p class="hero-desc hero-anim" style="margin-top:16px; font-size:14px; color:var(--text-3);">
+      Get notified when Relay launches:
+    </p>
+    <form id="notify-form" class="email-form hero-anim" style="margin-top:12px; max-width:480px;">
+      <input type="email" placeholder="your@email.com" required>
+      <button type="submit" class="btn btn-blue">Notify Me →</button>
+    </form>
+  </section>
+
+  <hr>
+
+  <!-- ===== THE PROBLEM ===== -->
+  <div class="section-alt">
+    <div class="section">
+      <div class="section-header animate">
+        <div class="section-eyebrow" style="color:var(--blue);">The Problem</div>
+        <h2>Context Windows End. Work Doesn't.</h2>
+      </div>
+
+      <div class="problem-card animate d2">
+        <h3>Claude forgets everything when the context window fills.</h3>
+        <p>Your project context, your architectural decisions, your reasoning chains —
+        gone. Every. Time. You start the next session from scratch, re-explaining what
+        you already explained, losing continuity on complex, long-running work.</p>
+        <p>For researchers, engineers, and developers working on <em>sustained, deep projects</em>,
+        this isn't a minor inconvenience. It's a fundamental break in the work.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ===== THE SOLUTION ===== -->
+  <div class="section">
+    <div class="section-header animate">
+      <div class="section-eyebrow" style="color:var(--blue);">How Relay Works</div>
+      <h2>Intelligent Session Handoff</h2>
+      <p class="section-desc">
+        Relay monitors your session, distills its essence at the boundary,
+        and injects calibrated continuity into the next session automatically.
+      </p>
+    </div>
+
+    <div class="flow-diagram animate d2">
+
+      <div class="flow-label-row">
+        <span class="fl-name" style="color:var(--text-3);">Session 1</span>
+        <div style="flex:1; display:flex; align-items:center; gap:12px;">
+          <div class="flow-bar-wrap" style="flex:1;">
+            <div class="flow-bar-fill" style="width:100%;"></div>
+          </div>
+          <span class="fl-tag" style="color:var(--blue);">Context Full →</span>
+        </div>
+      </div>
+
+      <div class="relay-connector">Relay detects context boundary — distilling session essence</div>
+
+      <div class="flow-label-row" style="padding-left:0;">
+        <span class="fl-name" style="color:var(--text-3);">Analysis</span>
+        <div style="flex:1;">
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <span style="font-family:var(--mono);font-size:11px;color:var(--text-2);background:var(--bg-4);border:1px solid var(--border-2);padding:4px 10px;border-radius:3px;">Key decisions</span>
+            <span style="font-family:var(--mono);font-size:11px;color:var(--text-2);background:var(--bg-4);border:1px solid var(--border-2);padding:4px 10px;border-radius:3px;">Open threads</span>
+            <span style="font-family:var(--mono);font-size:11px;color:var(--text-2);background:var(--bg-4);border:1px solid var(--border-2);padding:4px 10px;border-radius:3px;">Context invariants</span>
+            <span style="font-family:var(--mono);font-size:11px;color:var(--text-2);background:var(--bg-4);border:1px solid var(--border-2);padding:4px 10px;border-radius:3px;">Next steps</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="relay-connector">Generating calibrated density injection</div>
+
+      <div class="flow-label-row">
+        <span class="fl-name" style="color:var(--text-3);">Session 2</span>
+        <div style="flex:1; display:flex; align-items:center; gap:12px;">
+          <span class="fl-tag" style="color:var(--gold);">← Continuity injected</span>
+          <div class="flow-bar-wrap" style="flex:1;">
+            <div class="flow-bar-fill" style="width:5%;"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ===== FEATURES ===== -->
+  <div class="section-alt">
+    <div class="section">
+      <div class="section-header animate">
+        <div class="section-eyebrow" style="color:var(--blue);">Features</div>
+        <h2>What Relay Delivers</h2>
+      </div>
+
+      <div class="grid-2 animate d2">
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" style="stroke:var(--blue)"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          </div>
+          <div class="card-title">Automatic Session Handoff</div>
+          <p class="card-desc">Relay detects when context fills and prepares the handoff automatically. No manual copying. No lost context.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" style="stroke:var(--blue)"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <div class="card-title">Intelligent Context Compression</div>
+          <p class="card-desc">Not a raw transcript dump — Relay distills the most decision-relevant content into a compact, high-density summary.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" style="stroke:var(--blue)"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+          </div>
+          <div class="card-title">Calibrated Density Injection</div>
+          <p class="card-desc">The injected context is sized to leave maximum room for new work — not over-compressed, not wasteful.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" style="stroke:var(--blue)"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+          </div>
+          <div class="card-title">Persistent Session History</div>
+          <p class="card-desc">Every session handoff is logged locally. Full traceability of how your project context evolved over time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ===== PRICING ===== -->
+  <div class="section">
+    <div class="section-header animate">
+      <div class="section-eyebrow" style="color:var(--blue);">Planned Pricing</div>
+      <h2>Freemium Model</h2>
+    </div>
+
+    <div class="pricing-grid animate d2">
+      <div class="pricing-card">
+        <div class="pricing-tier">Free</div>
+        <div class="pricing-price">$0 <span class="unit">/ forever</span></div>
+        <div class="pricing-note">Basic session continuity</div>
+        <ul class="pricing-features">
+          <li>Basic session handoff</li>
+          <li>Manual trigger</li>
+          <li>5 handoffs / day</li>
+          <li>Local session log</li>
+        </ul>
+      </div>
+
+      <div class="pricing-card featured" style="border-color:rgba(126,184,212,0.3); background:rgba(126,184,212,0.02);">
+        <div class="pricing-tier" style="color:var(--blue);">Pro</div>
+        <div class="pricing-price" style="color:var(--blue);">TBD <span class="unit">/ month</span></div>
+        <div class="pricing-note">Coming with launch</div>
+        <ul class="pricing-features" style="--gold:var(--blue)">
+          <li>AI-summarized context distillation</li>
+          <li>Automatic trigger at boundary</li>
+          <li>Unlimited handoffs</li>
+          <li>Priority injection</li>
+          <li>Cross-project context threads</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand-name">sirius-lab · Relay</div>
+      <div class="footer-taglines">
+        <p>Failures are institutional assets.</p>
+        <p>Work that leaves no record does not exist.</p>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="../privacy.html">Privacy</a>
+      <a href="../support.html">Support</a>
+      <a href="https://github.com/m-sirius-k/sirius-lab" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
